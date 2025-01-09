@@ -1,0 +1,76 @@
+@use 'sass:map';
+@use 'theme' as theme;
+@use 'variables' as config;
+
+:root {
+  color-scheme: dark;
+  font-size: #{config.$font-size-base};
+  --font-family-base: #{config.$font-family-base};
+  --font-size-base: #{config.$font-size-base};
+  --font-weight-base: #{config.$font-weight-base};
+
+  @each $key, $value in theme.$theme-colors {
+    $main-color: map.get($value, main);
+    $accent-color: map.get($value, accent);
+    $contrast-color: map.get($value, contrast);
+    $border-color: map.get($value, border);
+    $divider-color: map.get($value, divider);
+    $shadow-color: map.get($value, shadow);
+
+    --#{$key}-main: #{$main-color};
+    --#{$key}-accent: #{$accent-color};
+    --#{$key}-contrast: #{$contrast-color};
+    --#{$key}-border: #{$border-color};
+    --#{$key}-divider: #{$divider-color};
+    --#{$key}-shadow: #{$shadow-color};
+  }
+
+  @each $key, $value in config.$spacing {
+    --spacing-#{$key}: #{$value};
+  }
+
+  @each $key, $value in config.$typography {
+    --font-#{$key}: #{$value};
+  }
+
+  @each $key, $value in config.$font-weights {
+    --weight-#{$key}: #{$value};
+  }
+
+  @each $key, $value in config.$radius {
+    --radius-#{$key}: #{$value};
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.text-heading {
+  font-size: var(--font-heading);
+  font-weight: var(--weight-bold);
+}
+.text-title {
+  font-size: var(--font-title);
+  font-weight: var(--weight-bold);
+}
+.text-subtitle {
+  font-size: var(--font-subtitle);
+  font-weight: var(--weight-medium);
+}
+.text-paragraph {
+  font-size: var(--font-paragraph);
+}
+.text-label {
+  font-size: var(--font-label);
+}
+
+.clickable {
+  cursor: pointer;
+}

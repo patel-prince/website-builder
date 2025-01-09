@@ -1,0 +1,47 @@
+@use 'sass:map';
+
+$black: (
+  50: #fafafa,
+  100: #f5f5f5,
+  200: #e5e5e5,
+  300: #d4d4d4,
+  400: #a3a3a3,
+  500: #737373,
+  600: #525252,
+  700: #404040,
+  800: #262626,
+  900: #171717,
+  950: #0a0a0a
+);
+$primary: (
+  50: #eff6ff,
+  100: #dbeafe,
+  200: #bfdbfe,
+  300: #93c5fd,
+  400: #60a5fa,
+  500: #3b82f6,
+  600: #2563eb,
+  700: #1d4ed8,
+  800: #1e40af,
+  900: #1e3a8a,
+  950: #172554
+);
+
+$theme-colors: (
+  default: (
+    main: light-dark(map.get($black, 50), map.get($black, 950)),
+    accent: light-dark(map.get($black, 100), map.get($black, 900)),
+    contrast: light-dark(map.get($black, 800), map.get($black, 200)),
+    border: light-dark(map.get($black, 200), map.get($black, 800)),
+    divider: light-dark(map.get($black, 300), map.get($black, 700)),
+    shadow: light-dark(#0a0a0a55, #fafafa55)
+  ),
+  primary: (
+    main: map.get($primary, 600),
+    accent: map.get($primary, 400),
+    contrast: map.get($black, 50),
+    border: map.get($black, 500),
+    divider: map.get($black, 300),
+    shadow: #2563eb66
+  )
+);

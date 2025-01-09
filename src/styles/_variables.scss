@@ -1,0 +1,37 @@
+$font-family-base: 'Poppins, "Open Sans", Roboto, serif, sans-serif';
+$font-size-base: 14px;
+$font-weight-base: 400;
+
+$spacing: (
+  none: 0,
+  xxs: 0.25rem,
+  xs: 0.5rem,
+  sm: 0.75rem,
+  md: 1rem,
+  lg: 1.5rem,
+  xl: 2rem,
+  xxl: 3rem
+);
+
+$radius: (
+  none: 0,
+  sm: 4px,
+  md: 6px,
+  lg: 8px,
+  circle: 50%,
+  pill: 9999px
+);
+
+$typography: (
+  heading: 2rem,
+  title: 1.5rem,
+  subtitle: 1.25rem,
+  paragraph: 1rem,
+  label: 0.875rem
+);
+
+$font-weights: (
+  light: 200,
+  regular: 400,
+  bold: 600
+);
