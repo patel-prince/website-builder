@@ -21,7 +21,8 @@ export default tseslint.config(
     rules: {
       ...reactHooks.configs.recommended.rules,
       'react/react-in-jsx-scope': 'off',
-      'react/display-name': 'off'
+      'react/display-name': 'off',
+      '@typescript-eslint/no-namespace': 'off'
     },
   },
 )
