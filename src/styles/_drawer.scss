@@ -1,0 +1,124 @@
+$transition: 0.35s ease-in-out;
+
+.rc-drawer {
+  position: fixed;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  pointer-events: none;
+  outline: none;
+  transition: all $transition;
+
+  &-open {
+    pointer-events: initial;
+  }
+
+  &-section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: var(--spacing-md);
+    background-color: var(--default-main);
+    border-bottom: 1px solid var(--default-divider);
+  }
+
+  &-footer {
+    display: flex;
+    padding-top: var(--spacing-md);
+    background-color: var(--default-main);
+    border-top: 1px solid var(--default-divider);
+  }
+
+  &-content {
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background-color: var(--default-main);
+      border-left: 1px solid var(--default-border);
+      padding: var(--spacing-md);
+      &-hidden {
+        transform: translateX(100%) !important;
+      }
+      &:not(
+          .rc-drawer-content-enter,
+          .rc-drawer-content-appear,
+          .rc-drawer-content-leave
+        ) {
+        transform: translateX(0);
+      }
+    }
+
+    &-enter,
+    &-appear,
+    &-leave {
+      &-start {
+        transition: none !important;
+      }
+
+      &-active {
+        transition: transform $transition;
+      }
+    }
+    &-enter,
+    &-appear {
+      transform: translateX(100%);
+
+      &-active {
+        transform: translateX(0);
+      }
+    }
+    &-leave {
+      transform: translateX(0);
+
+      &-active {
+        transform: translateX(100%) !important;
+      }
+    }
+  }
+
+  &-mask {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    &-enter,
+    &-appear,
+    &-leave {
+      &-active {
+        transition: all $transition;
+      }
+    }
+    &-enter,
+    &-appear {
+      opacity: 0;
+      &-active {
+        opacity: 1;
+      }
+    }
+
+    &-leave {
+      opacity: 1;
+      transition: all $transition;
+      &-active {
+        opacity: 0;
+      }
+    }
+  }
+}

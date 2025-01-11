@@ -1,7 +1,8 @@
 import { FC, PropsWithChildren } from 'react'
-import { AiOutlinePlus } from 'react-icons/ai'
 
 import { classnames } from '../utils'
+import { Icon } from './Icon'
+import { Subtitle } from './Typography'
 
 export interface DataCardProps extends PropsWithChildren {
   onClick?: () => void
@@ -26,13 +27,11 @@ export const DataCard: FC<DataCardProps> = ({ children, onClick, onCreate, title
     >
       <div className={bodyClasses}>
         {onCreate && (
-          <>
-            <div className="data-card-add-icon">
-              <AiOutlinePlus />
-            </div>
-            <h3 className="text-subtitle">{title || 'Add New'}</h3>
-          </>
+          <div className="data-card-add-icon">
+            <Icon name="AiOutlinePlus" />
+          </div>
         )}
+        {title && <Subtitle>{title}</Subtitle>}
         {children}
       </div>
     </div>

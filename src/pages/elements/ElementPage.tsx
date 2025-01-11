@@ -1,17 +1,21 @@
-import { DataCard, DataCardList, Divider, PageHeader, Subtitle } from '../../components'
+import {
+  DataCard,
+  DataCardList,
+  Divider,
+  Drawer,
+  PageHeader,
+  Subtitle,
+  useDrawer
+} from '../../components'
 
 const ElementPage = () => {
+  const { isOpen, close, open } = useDrawer()
   return (
     <>
       <PageHeader title="Elements" />
       <Divider />
       <DataCardList>
-        <DataCard
-          onCreate={() => {
-            console.log('clicked')
-          }}
-          title="Create New Element"
-        />
+        <DataCard onCreate={open} title="Create New Element" />
         <DataCard>
           <Subtitle>Element 1</Subtitle>
           <Divider />
@@ -20,6 +24,7 @@ const ElementPage = () => {
           <Subtitle>Element 2</Subtitle>
           <Divider />
         </DataCard>
+        <Drawer title="Create New Element" open={isOpen} onClose={close} />
       </DataCardList>
     </>
   )
