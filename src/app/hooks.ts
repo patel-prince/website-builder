@@ -7,3 +7,4 @@ export const useAppSelecter: TypedUseSelectorHook<RootState> = useSelector
 export const useAppDispatch = () => useDispatch<AppDispatch>()
 
 export const useCounterSelector = () => useAppSelecter((s) => s.counter)
+export const useElementSelector = () => useAppSelecter((s) => s.element)
