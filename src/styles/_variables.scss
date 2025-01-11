@@ -2,6 +2,17 @@ $font-family-base: 'Poppins, "Open Sans", Roboto, serif, sans-serif';
 $font-size-base: 14px;
 $font-weight-base: 400;
 
+$grid-columns: 12;
+$grid-gutter: var(--spacing-md);
+
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
 $spacing: (
   none: 0,
   xxs: 0.25rem,

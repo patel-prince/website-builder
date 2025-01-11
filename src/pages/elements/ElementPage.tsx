@@ -1,9 +1,14 @@
+import Input from 'rc-input'
+
 import {
+  Column,
   DataCard,
   DataCardList,
   Divider,
   Drawer,
+  Label,
   PageHeader,
+  Row,
   Subtitle,
   useDrawer
 } from '../../components'
@@ -24,7 +29,18 @@ const ElementPage = () => {
           <Subtitle>Element 2</Subtitle>
           <Divider />
         </DataCard>
-        <Drawer title="Create New Element" open={isOpen} onClose={close} />
+        <Drawer title="Create New Element" open={isOpen} onClose={close}>
+          <Row>
+            <Column xs={6}>
+              <Label>Element Name</Label>
+              <Input placeholder="Element Name" />
+            </Column>
+            <Column xs={6}>
+              <Label>Element Name</Label>
+              <Input placeholder="Element Name" />
+            </Column>
+          </Row>
+        </Drawer>
       </DataCardList>
     </>
   )
