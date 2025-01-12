@@ -1,4 +1,4 @@
-$transition: 0.35s ease-in-out;
+@use 'variables' as config;
 
 .rc-drawer {
   position: fixed;
@@ -8,7 +8,7 @@ $transition: 0.35s ease-in-out;
   z-index: 1000;
   pointer-events: none;
   outline: none;
-  transition: all $transition;
+  transition: config.$transition;
 
   &-open {
     pointer-events: initial;
@@ -71,7 +71,7 @@ $transition: 0.35s ease-in-out;
       }
 
       &-active {
-        transition: transform $transition;
+        transition: config.$transition;
       }
     }
     &-enter,
@@ -103,7 +103,7 @@ $transition: 0.35s ease-in-out;
     &-appear,
     &-leave {
       &-active {
-        transition: all $transition;
+        transition: config.$transition;
       }
     }
     &-enter,
@@ -116,7 +116,7 @@ $transition: 0.35s ease-in-out;
 
     &-leave {
       opacity: 1;
-      transition: all $transition;
+      transition: config.$transition;
       &-active {
         opacity: 0;
       }

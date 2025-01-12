@@ -54,8 +54,8 @@ const ElementPage = () => {
                 <Input placeholder="Tag Name" />
               </Field>
             </Column>
-            <button type="submit">Submit</button>
           </Row>
+          <button type="submit">Submit</button>
         </Form>
       </Drawer>
     </>
